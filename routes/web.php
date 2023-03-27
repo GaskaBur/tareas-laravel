@@ -22,8 +22,10 @@ Route::get('/saludos', function () {
     return view('app');
 });
 
-Route::get('/tareas', function () {
-    return view('todos.index');
-})->name('todos');
+Route::get('/tareas', [TodosController::class, 'index'])->name('todos');
+
+Route::patch('/tareas', [TodosController::class, 'index'])->name('todos-edit');
+Route::delete('/tareas', [TodosController::class, 'index'])->name('todos-destroy');
+
 
 Route::post('/tareas', [TodosController::class, 'store'])->name('todos');

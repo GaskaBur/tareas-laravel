@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\TodosController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CategoriesController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -31,3 +33,5 @@ Route::delete('/tareas/{id}', [TodosController::class, 'destroy'])->name('todos-
 
 
 Route::post('/tareas', [TodosController::class, 'store'])->name('todos');
+
+Route::resource('categories', CategoriesController::class);
